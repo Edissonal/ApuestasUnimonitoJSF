@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+ <ui:composition template="/WEB-INF/include/template.xhtml">
+    <ui:define name="head">
+        <title>Hello JSF Bootstrap</title>
+        <!-- Custom styles for this template -->
+        <h:outputStylesheet name="css/starter-template.css"/>
+    </ui:define>
+    <ui:define name="body">
+ <div class="row">
+<div class=" col col-md"></div>
+<div class="col-10 col-md8">
+
+    <h3>Listado de Usuarios</h3>
+      <p:link value="Agregar" class="btn btn-primary float-md-left"  outcome="insusuario"/><br/><br/>
+    
+             <h:form>
+                 
+                 <p:dataTable value="#{usuariosdBean.usuarios}" var="a" tableStyleClass="table table-bordered table-striped" style="margin-top: 40px;">
+                <p:column headerText="RUT" class="filters">
+                    <h:outputText value="#{a.idUsuarios}"/>
+                </p:column>
+                <p:column headerText="NOMBRE">
+                    <h:outputText value="#{a.nombUsu}"  class="filters"/>
+                </p:column>
+                <p:column headerText="APELLIDO">
+                    <h:outputText value="#{a.cedulUsu}"  class="filters"/>
+                </p:column>
+                <p:column headerText="CARRERA">
+                    <h:outputText value="#{a.idPerfiles.nombPerf}"  class="filters"/>
+                </p:column>
+                  <p:column headerText="Elimina">
+                      <h:commandLink  action="#{usuariosdBean.elimina(a.idUsuarios)}" class="btn btn-success">Eliminar</h:commandLink>
+                     </p:column>
+                     
+                       <p:column headerText="Editar">
+                           <h:commandLink  action="#{usuariosdBean.consulta(a.idUsuarios)}" class="btn btn-danger">Editar</h:commandLink>
+                       </p:column>
+
+  </p:dataTable>
+            </h:form>  
+          </div>
+<div class="col col-md"></div>
+</div>
+    </ui:define>
+  </ui:composition> 
+    
+ 
+</html>
