@@ -4,12 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/src/java/Beans/UsuariosdBean.java</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/src/java/Beans/TipoDeporteBean.java</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/web/consutdeporte.xhtml</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/web/consusu.xhtml</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/web/index.xhtml</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/web/instdeporte.xhtml</file>
-            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/web/updatetdeporte.xhtml</file>
+            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/src/java/Beans/EquipoBean.java</file>
+            <file>file:/C:/xampp/htdocs/ApuestasUnimonitoJSF/Unimonito-JSF/src/java/Beans/Equipo2Bean.java</file>
         </group>
     </open-files>
 </project-private>
