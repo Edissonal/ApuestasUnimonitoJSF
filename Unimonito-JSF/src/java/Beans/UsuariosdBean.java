@@ -88,7 +88,11 @@ public class UsuariosdBean {
        return "consusu";
     }     
                     
-               
+         public UsuariosdBean() {
+      perfiles = new Perfiles();
+        
+    
+}          
                
                
     public String getNombusu() {
@@ -98,11 +102,7 @@ public class UsuariosdBean {
     public void setNombusu(String nombusu) {
         this.nombusu = nombusu;
     }
-    public UsuariosdBean() {
-      perfiles = new Perfiles();
-        
-    
-}
+
 
     public PerfilesFacadeLocal getPerfilesFacade() {
         return perfilesFacade;
