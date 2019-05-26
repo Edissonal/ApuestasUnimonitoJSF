@@ -40,7 +40,7 @@ public class TipoDeporteBean {
        a.setIdTipoDeporte(idTipoDeporte);
        a.setNombDepor(nombDepor);  
        tipoDeporteFacade.create(a);
-        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "consusu.xhtml");
+        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "consutdeporte.xhtml");
        return "consutdeporte";
     } 
 

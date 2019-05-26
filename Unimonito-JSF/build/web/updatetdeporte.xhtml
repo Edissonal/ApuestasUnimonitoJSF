@@ -22,14 +22,14 @@
             <h:panelGrid columns="2">
                 <div class="form-group">
                     <label for="cif">ID Deporte</label>
-                <h:inputHidden  class="form-control" value="#{tipoDeporteBean.idTipoDeporte}" required="true"/>
+                <h:inputText  class="form-control" value="#{tipoDeporteBean.idTipoDeporte}" required="true" readonly="#{facesContext.renderResponse}"/>
                 </div>
                 <div class="form-group">
                 <label for="cif">Nombre Tipo Deporte</label>
                 <h:inputText class="form-control" value="#{tipoDeporteBean.nombDepor}" required="true"/>
                  </div>
 
-                <h:commandButton  class="btn btn-danger" action="#{tipoDeporteBean.GuardarEdicion(tipoDeporteBean.idusuarios)}" value="Editar"/>
+                <h:commandButton  class="btn btn-danger" action="#{tipoDeporteBean.GuardarEdicion(tipoDeporteBean.idTipoDeporte)}" value="Editar"/>
             </h:panelGrid>
 
         </h:form>
