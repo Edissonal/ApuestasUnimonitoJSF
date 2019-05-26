@@ -48,8 +48,8 @@ public class Equipo2Bean {
        a.setNombEquipo2(nombEquipo2);
        a.setIdTipoDeporte(tipoDeporteFacade.find(idTipo_Deporte.getIdTipoDeporte()));     
        equipo2Facade.create(a);
-        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "consequipo.xhtml");
-       return "consequipo";
+        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "consequipo2.xhtml");
+       return "consequipo2";
    }
 
 
@@ -57,7 +57,7 @@ public class Equipo2Bean {
          Equipo2 equipo2;              
          equipo2 = equipo2Facade.find(codigo);
          equipo2Facade.remove(equipo2);
-         return "consequipo";
+         return "consequipo2";
     }
 
     public String consulta(int id){ 
@@ -65,7 +65,7 @@ public class Equipo2Bean {
         this.idEquipo2 = p.getIdEquipo2();
         this.nombEquipo2 = p.getNombEquipo2();
         this.idTipo_Deporte= p.getIdTipoDeporte();
-        return "updateequipo";
+        return "updateequipo2";
     } 
     
     public String GuardarEdicion(int id){
@@ -76,7 +76,7 @@ public class Equipo2Bean {
        a.setNombEquipo2(nombEquipo2);
        a.setIdTipoDeporte(tipoDeporteFacade.find(idTipo_Deporte.getIdTipoDeporte()));
        this.equipo2Facade.edit(a);
-       return "consequipo";
+       return "consequipo2";
     }    
     
 
