@@ -60,31 +60,54 @@ public class PartidosBean {
         return partidoFacade.findAll();
     
     }
-     
+
+
+       public String crear(){
+        
+       Partido a = new Partido();
+       a.setMarcadorEquip1(marcadorequip1);
+       a.setMarcadorEquip2(marcadorequip2); 
+       a.setIdEquipo(equipoFacade.find(equipos.getIdEquipo()));
+       a.setIdEquipo2(equipo2Facade.find(equipos2.getIdEquipo2()));
+       partidoFacade.create(a);
+        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "constpartido.xhtml");
+      
+    
+       return "constpartido";
+   }
+       
+    public String elimina(int codigo){                    
+         Partido partido;              
+         partido = partidoFacade.find(codigo);
+         partidoFacade.remove(partido);
+         return "constpartido";
+    }       
              
         public String consulta(int id)
     { 
         Partido p =  this.partidoFacade.find(id);       
         this.idpartido = p.getIdPartido();
+        this.marcadorequip1 = p.getMarcadorEquip1();
+        this.marcadorequip2 = p.getMarcadorEquip2();        
         this.equipos = p.getIdEquipo();
         this.equipos2 = p.getIdEquipo2();
         
         
-        return "definemarca";
+        return "updatepartido";
     }
 
-       public String crear(){
-        
-       Partido a = new Partido();
-
+    public String GuardarEdicion(int id){
+       
+       Partido a = new Partido();       
+       a =  this.partidoFacade.find(id);  
+       a.setMarcadorEquip1(marcadorequip1);
+       a.setMarcadorEquip2(marcadorequip2);       
        a.setIdEquipo(equipoFacade.find(equipos.getIdEquipo()));
        a.setIdEquipo2(equipo2Facade.find(equipos2.getIdEquipo2()));
-       a.setMarcadorEquip1(marcadorequip1);
-       a.setMarcadorEquip2(marcadorequip2); 
-       partidoFacade.create(a);
-        FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), null, "constpartido.xhtml");
+       this.partidoFacade.edit(a);
        return "constpartido";
-   }
+    }        
+
 
     public Equipo2FacadeLocal getEquipo2Facade() {
         return equipo2Facade;

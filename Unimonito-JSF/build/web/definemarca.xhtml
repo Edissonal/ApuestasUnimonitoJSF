@@ -26,21 +26,33 @@
                 </div>
                 <div class="form-group">
                 <label for="cif">Equipo1</label>
-                <h:inputText class="form-control" value="#{partidosBean.idequipo.nombEquipo}" required="true"/>
+                    <h:inputText class="form-control" value="#{partidosBean.equipos.nombEquipo}" required="true" readonly= "#{facesContext.renderResponse}"/>
+                   <label for="cif"></label>
+                <h:inputHidden class="form-control" value="#{partidosBean.equipos.idEquipo}" required="true"/>
+                
                  </div>
+                
+                
               <div class="form-group">
                 <label for="cif">Equipo2</label>
-                <h:inputText class="form-control" value="#{partidosBean.idequipo2}" required="true"/>
+                <h:inputText class="form-control" value="#{partidosBean.equipos2.nombEquipo2}" required="true" readonly= "#{facesContext.renderResponse}"/>
+                 <label for="cif"></label>
+                <h:inputHidden class="form-control" value="#{partidosBean.equipos2.idEquipo2}" required="true"/>
                     </div>
                 
-               <div class="form-group">
-                <label for="cif">Usuario</label>
+              <div class="form-group">
+                <label for="cif">Marcador1</label>
+                <h:inputText class="form-control" value="#{partidosBean.marcadorequip1}" required="true"/>
+                    </div>
                 
-                <h:selectOneMenu value="#{boletadBean.usuarios.idUsuarios}">
-                    <f:selectItems value="#{usuariosdBean.usuarios}" var="c" itemLabel="#{c.nombUsu}" itemValue="#{c.idUsuarios}"/> 
-                </h:selectOneMenu>
-                 </div>
-                <h:commandButton  class="btn btn-danger" action="#{boletadBean.GuardarEdicion(boletadBean.idBoleteria)}" value="Editar"/>
+              <div class="form-group">
+                <label for="cif">Marcador1</label>
+                <h:inputText class="form-control" value="#{partidosBean.marcadorequip2}" required="true"/>
+                    </div>    
+                
+             
+                <h:commandButton  class="btn btn-danger" action="#{partidosBean.crear()}" value="Ingresar"/>
+            
             </h:panelGrid>
 
         </h:form>

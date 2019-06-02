@@ -15,8 +15,8 @@
 <div class=" col col-md"></div>
 <div class="col-10 col-md8">
 
-    <h3>Listado de Partidos</h3>
-      <p:link value="Agregar" class="btn btn-primary float-md-left"  outcome="insusuario"/><br/><br/>
+    <h3>Listado de VS</h3>
+      <p:link value="Agregar" class="btn btn-primary float-md-left"  outcome="inspartido"/><br/><br/>
     
              <h:form>
                  
@@ -30,10 +30,20 @@
                 <p:column headerText="Equipo2">
                     <h:outputText value="#{a.idEquipo2.nombEquipo2}"  class="filters"/>
                 </p:column>
+                
+                <p:column headerText="Marcador Equipo1">
+                    <h:outputText value="#{a.marcadorEquip1}"  class="filters"/>
+                </p:column>  
+                     
+                <p:column headerText="Marcador Equipo2">
+                    <h:outputText value="#{a.marcadorEquip2}"  class="filters"/>
+                </p:column>                     
              
-                  <p:column headerText="Definir Mracador">
-                      <h:commandLink  action="#{partidosBean.consulta(a.idPartido)}" class="btn btn-success">Editar</h:commandLink>
-                     </p:column>
+
+                     
+                       <p:column headerText="Editar">
+                           <h:commandLink  action="#{partidosBean.consulta(a.idPartido)}" class="btn btn-danger">Editar</h:commandLink>
+                       </p:column>
                      
                    
   </p:dataTable>
