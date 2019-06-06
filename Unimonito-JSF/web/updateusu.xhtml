@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+ <ui:composition template="/WEB-INF/include/template.xhtml">
+    <ui:define name="head">
+        <title>Hello JSF Bootstrap</title>
+        <!-- Custom styles for this template -->
+        <h:outputStylesheet name="css/starter-template.css"/>
+    </ui:define>
+    <ui:define name="body">
+ <div class="row">
+<div class=" col col-md"></div>
+<div class="col-10 col-md8">
+        <h3>Listado de Usuarios</h3>
+    
+             
+            <h:form id="fa">
+            <h:panelGrid columns="2">
+                <div class="form-group">
+                    <label for="cif">Id</label>
+                <h:inputHidden  class="form-control" value="#{usuariosdBean.idusuarios}" required="true"/>
+                </div>
+                <div class="form-group">
+                <label for="cif">Nombre</label>
+                <h:inputText class="form-control" value="#{usuariosdBean.nombusu}" required="true"/>
+                 </div>
+              <div class="form-group">
+                <label for="cif">Cedula</label>
+                <h:inputText class="form-control" value="#{usuariosdBean.cedulusu}" required="true"/>
+                    </div>
+                
+               <div class="form-group">
+                <label for="cif">Curso</label>
+                
+                <h:selectOneMenu value="#{usuariosdBean.perfiles.idPerfiles}">
+                    <f:selectItems value="#{perfilesBean.perfiles}" var="c" itemLabel="#{c.nombPerf}" itemValue="#{c.idPerfiles}"/> 
+                </h:selectOneMenu>
+                 </div>
+                <h:commandButton  class="btn btn-danger" action="#{usuariosdBean.GuardarEdicion(usuariosdBean.idusuarios)}" value="Editar"/>
+            </h:panelGrid>
+
+        </h:form>
+    
+    
+         
+       </div>
+<div class="col col-md"></div>
+</div>
+    </ui:define>
+  </ui:composition> 
+    
+ 
+</html>
+
